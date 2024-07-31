@@ -44,7 +44,7 @@ The directory contains:
 > The example bash scripts were setup in the context of the above mentioned `reweight_residue_secstruct` Conda environment.
 > If you want to run the example yourself, you need to properly setup your Amber and Conda installations by changing the respective lines in the bash scripts (indicated by the comment `# PLEASE ADAPT THIS!`).
 
-* Then execute the following commands within the `example` directory:
+* To run the example, execute the following commands within the `example` directory:
 
 1) `$ ./prepare_input_reweight_residue_secstruct.bsh` 
 
