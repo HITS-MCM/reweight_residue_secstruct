@@ -7,7 +7,7 @@ Please see the following publication for more information on the applied discret
 
 The reweighting procedure is implemented in the Python module `src/reweight_residue_secstruct/reweight_residue_secstruct.py` (please also check the introductory comment in `reweight_residue_secstruct.py` for more information).
 
-### Necessary Python libraries
+### Python libraries needed
 
 To run `reweight_residue_secstruct.py`, please first created the necessary "environment", either by creating
 
