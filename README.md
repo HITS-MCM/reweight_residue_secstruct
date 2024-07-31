@@ -62,7 +62,7 @@ In case of the first trajectory file (i.e., `gaMD_params_stripped.nc`), only the
 > [!IMPORTANT]
 > * If your trajectory is split over more than two trajectory files, you have to extend the script accordingly.
 > **In any case, make sure that the order of your GaMD frames and their respective GaMD log file information are in sync.**
-> * A dual boost potential was applied during GaMD simulations.
+> * A dual boost potential was applied during GaMD simulations (relevant for parsing).
 
 > [!TIP]
 > By making the corresponding adaptions to `prepare_input_reweight_residue_secstruct.bsh`, in principle, one can also aggregate information from different GaMD replica for reweighting.
