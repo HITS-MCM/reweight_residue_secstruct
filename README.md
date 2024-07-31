@@ -7,7 +7,7 @@ Please see the following publication for more information on the applied **discr
 
 The reweighting procedure is implemented in the Python module **`src/reweight_residue_secstruct/reweight_residue_secstruct.py`** (please also check the introductory comment in `reweight_residue_secstruct.py` for more information).
 
-### Python libraries needed
+### Python libraries needed for `reweight_residue_secstruct.py`
 
 To run `reweight_residue_secstruct.py`, please first created the necessary "environment", either by creating
 
@@ -26,7 +26,7 @@ $ conda install -c numba numba<br/>
 ```
 * or by use of any other means to setup Python and the corresponding libraries.
 
-### Example case
+### Example case on how to use `reweight_residue_secstruct.py`
 
 An example case on how to **(i)** create the input files for `reweight_residue_secstruct.py` from examplary Amber GaMD output files and to **(ii)** run `reweight_residue_secstruct.py` is provided in the directory `example`. The directory contains examplary Amber GaMD production run trajectory files (`gaMD_params_stripped.nc`, `gaMD_prod_1_stripped_cut.nc`) as well as the corresponding Amber GaMD log files (`gamd.log`, `gaMD_prod_1_cut.log`), containing the GaMD boost potential information for the respective MD steps the frames were written. Furthermore, `example` contains two bash scripts: prepare_input_reweight_residue_secstruct.bsh and run_reweight_residue_secstruct.bsh.
 
