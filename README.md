@@ -52,7 +52,7 @@ This bash script will generate the necessary input files for `reweight_residue_s
 The bash script will write its output to the directory `input_reweight_residue_secstruct`.
 The file `dssp.out` contains the secondary structure information for each peptide residue of the all the GaMD frames, obtained via **`cpptraj`**.
 The file `weights.dat` contains the corresponding boost potential information parsed from the GaMD log files **in the format that is also used by the standard GaMD reweighting scripts `PyReweighting-*D.py`**, used for continuous order parameters.
-$${\color{red}**Please consult the comments in `prepare_input_reweight_residue_secstruct.bsh` for more information on its input and the generated output etc.**}$$
+$${\color{red}Please consult the comments in `prepare_input_reweight_residue_secstruct.bsh` for more information on its input and the generated output etc.}$$
 In the example case, the script `prepare_input_reweight_residue_secstruct.bsh` aggregates the information from a consecutive GaMD production run (i.e., a single replicon), split over two trajectory files.
 In case of the first trajectory file (i.e., `gaMD_params_stripped.nc`), only the last third of frames is taken (as the remaining part corresponds to preparatory steps).
 
