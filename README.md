@@ -37,7 +37,7 @@ An example case on how to
 > Please note that the example bash scripts as well as `reweight_residue_secstruct.py` were **only used in combination with GaMD output from Amber18**.
 
 > [!NOTE]
-> To rerun the example, just remove the directories `input_reweight_residue_secstruct` and `output_reweight_residue_secstruct` and make sure you have a working Amber installation.
+> To rerun the example, just remove the directories `input_reweight_residue_secstruct` and `output_reweight_residue_secstruct` and **make sure you have a working Amber installation**.
 
 * Then execute the following commands within the `example` directory:
 
