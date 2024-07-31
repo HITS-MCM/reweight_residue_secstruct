@@ -13,8 +13,8 @@ To run 'reweight_residue_secstruct.py', please first created the necessary "envi
 
 1) the Conda environment 'reweight_residue_secstruct' via the supplied YAML file (environment_reweight_residue_secstruct.yml)
 
-    $ conda env create -f environment_reweight_residue_secstruct.yml
-    $ conda activate reweight_residue_secstruct
+>    $ conda env create -f environment_reweight_residue_secstruct.yml
+>    $ conda activate reweight_residue_secstruct
 
 3) or alternatively, by creating the corresponding Conda environment via the following set of commands
 
