@@ -57,11 +57,11 @@ An example case on how to
 
 3) `$ ./run_reweight_residue_secstruct.bsh` 
 
-> This is a wrapper-script for `reweight_residue_secstruct.py`.
-> It will collect all the output from `reweight_residue_secstruct.py` in the directory `output_reweight_residue_secstruct`.
-> Please check comments in `run_reweight_residue_secstruct.bsh` for information on the `reweight_residue_secstruct.py` output files.
+This is a wrapper-script for `reweight_residue_secstruct.py`.
+It will collect all the output from `reweight_residue_secstruct.py` in the directory `output_reweight_residue_secstruct`.
+Please check comments in `run_reweight_residue_secstruct.bsh` for information on the `reweight_residue_secstruct.py` output files.
 
-[!TIP]
+> [!TIP]
 > The script `reweight_residue_secstruct.py` can be run with automatic parallelization (@njit) by using its `-m parallel` option.
 
 > [!NOTE]
