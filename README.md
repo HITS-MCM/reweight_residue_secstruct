@@ -48,23 +48,23 @@ The directory contains:
 
 1) `$ ./prepare_input_reweight_residue_secstruct.bsh` 
 
-    This bash script will generate the necessary input files for `reweight_residue_secstruct.py`, `dssp.out` and `weights.dat`, from the GaMD trajectory and GaMD log files, respectively.
-    The bash script will write its output to the directory `input_reweight_residue_secstruct`.
-    The file `dssp.out` contains the secondary structure information for each peptide residue of the all the GaMD frames, obtained via cpptraj.
-    The file `weights.dat` contains the corresponding boost potential information parsed from the GaMD log files in the format that is also used by the standard GaMD reweighting scripts `PyReweighting-*D.py`, used for continuous order parameters.
-    Please consult the comments in `prepare_input_reweight_residue_secstruct.bsh` for more information on its input and the generated output etc.
-    The script `prepare_input_reweight_residue_secstruct.bsh` aggregates the information from a consecutive GaMD production run (i.e., a single replicon), split over two trajectory files.
-    In case of the first trajectory file (i.e., `gaMD_params_stripped.nc`), only the last third of frames is taken (as the remaining part corresponds to preparatory steps).
-    If your trajectory is split over more than two trajectory files, you have to extend the script accordingly. In any case, make sure that the order of your GaMD frames and their respective GaMD log file information are in sync.
+This bash script will generate the necessary input files for `reweight_residue_secstruct.py`, `dssp.out` and `weights.dat`, from the GaMD trajectory and GaMD log files, respectively.
+The bash script will write its output to the directory `input_reweight_residue_secstruct`.
+The file `dssp.out` contains the secondary structure information for each peptide residue of the all the GaMD frames, obtained via cpptraj.
+The file `weights.dat` contains the corresponding boost potential information parsed from the GaMD log files in the format that is also used by the standard GaMD reweighting scripts `PyReweighting-*D.py`, used for continuous order parameters.
+Please consult the comments in `prepare_input_reweight_residue_secstruct.bsh` for more information on its input and the generated output etc.
+The script `prepare_input_reweight_residue_secstruct.bsh` aggregates the information from a consecutive GaMD production run (i.e., a single replicon), split over two trajectory files.
+In case of the first trajectory file (i.e., `gaMD_params_stripped.nc`), only the last third of frames is taken (as the remaining part corresponds to preparatory steps).
+If your trajectory is split over more than two trajectory files, you have to extend the script accordingly. In any case, make sure that the order of your GaMD frames and their respective GaMD log file information are in sync.
 
 > [!TIP]
 > By making the corresponding adaptions to `prepare_input_reweight_residue_secstruct.bsh`, in principle, one can also aggregate information from different GaMD replica for reweighting.
 
-3) `$ ./run_reweight_residue_secstruct.bsh` 
+2) `$ ./run_reweight_residue_secstruct.bsh` 
 
 This is a wrapper-script for `reweight_residue_secstruct.py`.
 It will collect all the output from `reweight_residue_secstruct.py` in the directory `output_reweight_residue_secstruct`.
 Please check comments in `run_reweight_residue_secstruct.bsh` for information on the `reweight_residue_secstruct.py` output files.
 
 > [!TIP]
-> The script `reweight_residue_secstruct.py` can be run with automatic parallelization (@njit) by using its `-m parallel` option.
+> The script `reweight_residue_secstruct.py` can be run with automatic parallelization (`@njit`) by using its `-m parallel` option.
