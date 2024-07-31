@@ -46,7 +46,7 @@ The directory contains:
 
 **To run the example, execute the following commands within the `example` directory:**
 
-**1)** `$ ./prepare_input_reweight_residue_secstruct.bsh` 
+**1) `$ ./prepare_input_reweight_residue_secstruct.bsh`**
 
 This bash script will generate the necessary input files for `reweight_residue_secstruct.py`, `dssp.out` and `weights.dat`, from the GaMD trajectory and GaMD log files, respectively.
 The bash script will write its output to the directory `input_reweight_residue_secstruct`.
@@ -66,7 +66,7 @@ In case of the first trajectory file (i.e., `gaMD_params_stripped.nc`), only the
 > [!TIP]
 > By making the corresponding adaptions to `prepare_input_reweight_residue_secstruct.bsh`, in principle, one can also aggregate information from different GaMD replica for reweighting.
 
-**2)** `$ ./run_reweight_residue_secstruct.bsh` 
+**2) `$ ./run_reweight_residue_secstruct.bsh`**
 
 This is a wrapper-script to run `reweight_residue_secstruct.py`.
 It will collect all the output from `reweight_residue_secstruct.py` in the directory `output_reweight_residue_secstruct`.
