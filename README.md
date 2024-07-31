@@ -62,7 +62,7 @@ If your trajectory is split over more than two trajectory files, you have to ext
 
 2) `$ ./run_reweight_residue_secstruct.bsh` 
 
-This is a wrapper-script for `reweight_residue_secstruct.py`.
+This is a wrapper-script to run `reweight_residue_secstruct.py`.
 It will collect all the output from `reweight_residue_secstruct.py` in the directory `output_reweight_residue_secstruct`.
 Please check comments in `run_reweight_residue_secstruct.bsh` for information on the `reweight_residue_secstruct.py` output files.
 
