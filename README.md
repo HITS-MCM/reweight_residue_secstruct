@@ -50,12 +50,10 @@ An example case on how to
     Please consult the comments in `prepare_input_reweight_residue_secstruct.bsh` for more information on its input and the generated output etc.
     The script `prepare_input_reweight_residue_secstruct.bsh` aggregates the information from a consecutive GaMD production run (i.e., a single replicon), split over two trajectory files.
     In case of the first trajectory file (i.e., `gaMD_params_stripped.nc`), only the last third of frames is taken (as the remaining part corresponds to preparatory steps).
-    If your trajectory is split over more than two trajectory files, you have to extend the script accordingly.
+    If your trajectory is split over more than two trajectory files, you have to extend the script accordingly. In any case, make sure that the order of your GaMD frames and their respective GaMD log file information are in sync.
 
 > [!TIP]
 > By making the corresponding adaptions to `prepare_input_reweight_residue_secstruct.bsh`, in principle, one can also aggregate information from different GaMD replica for reweighting.
-
-In any case, make sure that the order of your GaMD frames and their respective GaMD log file information are in sync.
 
 3) `$ ./run_reweight_residue_secstruct.bsh` 
 
