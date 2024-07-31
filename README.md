@@ -57,10 +57,13 @@ An example case on how to
 
 3) `$ ./run_reweight_residue_secstruct.bsh` 
 
-    This is a wrapper-script for `reweight_residue_secstruct.py`.
-    It will collect all the output from `reweight_residue_secstruct.py` in the directory `output_reweight_residue_secstruct`.
-    Please check comments in `run_reweight_residue_secstruct.bsh` for information on the `reweight_residue_secstruct.py` output files.
-    The script `reweight_residue_secstruct.py` can be run with automatic parallelization (@njit) by using its `-m parallel` option.
+> This is a wrapper-script for `reweight_residue_secstruct.py`.
+> It will collect all the output from `reweight_residue_secstruct.py` in the directory `output_reweight_residue_secstruct`.
+> Please check comments in `run_reweight_residue_secstruct.bsh` for information on the `reweight_residue_secstruct.py` output files.
+
+[!TIP]
+> The script `reweight_residue_secstruct.py` can be run with automatic parallelization (@njit) by using its `-m parallel` option.
+
 > [!NOTE]
 > The example bash scripts were setup in the context of the above mentioned `reweight_residue_secstruct` Conda environment.
 > If you want to run the example yourself, you need to properly setup your Amber and Conda installations by changing the respective lines in the bash scripts (indicated by the comment `# PLEASE ADAPT THIS!`).
