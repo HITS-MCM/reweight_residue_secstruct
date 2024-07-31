@@ -36,7 +36,7 @@ An example case on how to
 > The examplary files were generated with **Amber18**. 
 > Please note that the example bash scripts as well as `reweight_residue_secstruct.py` were **only used in combination with GaMD output from Amber18**.
 
-> [!NOTE]
+> [!IMPORTANT]
 > To rerun the example, just remove the directories `input_reweight_residue_secstruct` and `output_reweight_residue_secstruct` and **make sure you have a working Amber installation**.
 > The example bash scripts were setup in the context of the above mentioned `reweight_residue_secstruct` Conda environment.
 > If you want to run the example yourself, you need to properly setup your Amber and Conda installations by changing the respective lines in the bash scripts (indicated by the comment `# PLEASE ADAPT THIS!`).
