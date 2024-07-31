@@ -13,16 +13,16 @@ To run 'reweight_residue_secstruct.py', please first created the necessary "envi
 
 1) the Conda environment 'reweight_residue_secstruct' via the supplied YAML file (environment_reweight_residue_secstruct.yml)
 
-    $ conda env create -f environment_reweight_residue_secstruct.yml
-    $ conda activate reweight_residue_secstruct
+$ conda env create -f environment_reweight_residue_secstruct.yml
+$ conda activate reweight_residue_secstruct
 
 2) or alternatively, by creating the corresponding Conda environment via the following set of commands:
 
-    $ conda create -n reweight_residue_secstruct python=3.6
-    $ conda activate reweight_residue_secstruct
-    $ conda install -c conda-forge pandas
-    $ conda install -c conda-forge matplotlib
-    $ conda install -c numba numba
+$ conda create -n reweight_residue_secstruct python=3.6
+$ conda activate reweight_residue_secstruct
+$ conda install -c conda-forge pandas
+$ conda install -c conda-forge matplotlib
+$ conda install -c numba numba
 
 3) or by use of any other means to setup Python and the corresponding libraries.
 
