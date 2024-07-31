@@ -32,8 +32,8 @@ An example case on how to **(i)** create the input files for `reweight_residue_s
 
 The directory contains: 
 * examplary Amber GaMD production run trajectory files (`gaMD_params_stripped.nc`, `gaMD_prod_1_stripped_cut.nc`) as well as
-* the corresponding Amber GaMD log files (`gamd.log`, `gaMD_prod_1_cut.log`), containing the GaMD boost potential information for the respective MD steps the frames were written and
-* two bash scripts: prepare_input_reweight_residue_secstruct.bsh and run_reweight_residue_secstruct.bsh.
+* the corresponding Amber GaMD log files (`gamd.log`, `gaMD_prod_1_cut.log`), containing the GaMD boost potential information for the respective MD steps the frames were written at and
+* two bash scripts: `prepare_input_reweight_residue_secstruct.bsh` and `run_reweight_residue_secstruct.bsh`.
 
 > [!CAUTION]
 > The examplary files were generated with **Amber18**. 
