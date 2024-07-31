@@ -7,7 +7,7 @@ Please see the following publication for more information on the applied discret
 
 The reweighting procedure is implemented in the Python module <mark>src/reweight_residue_secstruct/reweight_residue_secstruct.py</mark> (please also check the introductory comment in 'reweight_residue_secstruct.py' for more information).
 
-To run 'reweight_residue_secstruct.py', please first created the necessary "environment", either by creating
+**To run 'reweight_residue_secstruct.py', please first created the necessary "environment", either by creating**
 
 1) the Conda environment 'reweight_residue_secstruct' via the supplied YAML file (environment_reweight_residue_secstruct.yml)
 ```
