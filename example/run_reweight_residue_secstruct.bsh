@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Example script to run reweight_residue_secstruct.py.
+# The output of this script is written to the directory output_reweight_residue_secstruct.
+
+# Author: Manuel Glaser, manuel.glaser@h-its.org
+
+# Setup your conda installation!
+. /exports/scratch/glaserml/Applications/anaconda3/etc/profile.d/conda.sh # PLEASE ADAPT THIS!
+
+# Activate the 'reweight_residue_secstruct' environment
+conda activate reweight_residue_secstruct
+
+input='../input_reweight_residue_secstruct'
+output='output_reweight_residue_secstruct'
+app_path='../../src/reweight_residue_secstruct' # relative to $output
+
+if test -d $output
+then
+    echo "Please backup, move, or remove the directory $output first, before running this script."
+    exit 1
+fi
+
+mkdir -p $output
+
+cd $output
+
+if ! test -f $input/dssp.out || ! test -f $input/weights.dat
+then
+    echo "Please provide the input files for reweight_residue_secstruct.py, i.e., dssp.out and weights.dat."
+    echo "To run the example case, they should be provided in the directory input_reweight_residue_secstruct."
+    echo "But, in general, they can of course be located elsewhere (see -d and -e options of reweight_residue_secstruct.py)."
+    exit 1
+fi
+
+# Example command-line to run in parallel mode
+python $app_path/reweight_residue_secstruct.py -m parallel -d $input/dssp.out -e $input/weights.dat -o "tS100A1ct" -c "coolwarm:0.15,0.85:white,black,white"
+
+# Example command-line to run in serial mode
+#python $app_path/reweight_residue_secstruct.py -m serial -d $input/dssp.out -e $input/weights.dat -o "tS100A1ct" -c "coolwarm:0.15,0.85:white,black,white"
+
+#------------------------------------------------------------------------
+# List of output files written by reweight_residue_secstruct.py 
+# (secondary structure types are referred to via letters or 'none' in 
+# the output files and are explained in a comment at the beginning of the
+# reweight_residue_secstruct.py script)
+#------------------------------------------------------------------------
+# Total count of a specific secondary structure type at each peptide residue position over the entire GaMD production run: tS100A1ct_occs.csv
+# Original/biased per-residue position secondary structure type propensities from GaMD production run: tS100A1ct_prop.csv
+# Reweighted/unbiased per-residue position secondary structure type propensities from GaMD production run: tS100A1ct_dis_rew_prop.csv
+# Heatmaps comparing the original (top) vs. the reweighted (bottom) per-residue position secondary structure type propensities from the GaMD production run: ss_propensity_heatmap.pdf 
+# (Boost potential averages (and standard deviations) calculated from all frames that exhibit a specific secondary structure type at a specific residue position: tS100A1ct_ene_av.csv and tS100A1ct_ene_std.csv; 'sum' column is empty as it is not relevent in this case)
+
+cd ..

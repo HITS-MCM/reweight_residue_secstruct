@@ -1,0 +1,96 @@
+#!/bin/bash
+
+# This script provides an example on how to obtain the "dssp.out" and "weights.dat" input files 
+# for the script reweight_residue_secstruct.py from the Amber GaMD trajectory and boost potential output (from Amber18). 
+
+# In this example, a single consecutive GaMD production simulation, spread over multiple (here two), trajectory files is prepared for reweighting:
+#  Amber topolgy file: tS100A1ct_peptide.prmtop
+#  Amber NetCDF trajectoy files (not autoimaged): gaMD_params_stripped.nc and gaMD_prod_1_stripped_cut.nc
+#  Respective Amber GaMD log files: gamd.log and gaMD_prod_1_cut.log
+# However, one can also adapt the script to aggregate respective information from multiple independent GaMD simulation runs of the same system.
+# Simulations were performed in explicit solvent, but water molecules/ions were removed for this example to reduce file size.
+# Dual boost GaMD was applied (i.e., total potential plus dihedral potential boost).
+# The simulations are associated with the publication:
+#  J Phys Chem B. 2021 May 13;125(18):4654-4666 
+#  "Simulation of the Positive Inotropic Peptide S100A1ct in Aqueous Environment by Gaussian Accelerated Molecular Dynamics"
+#  https://pubs.acs.org/doi/10.1021/acs.jpcb.1c00902
+# To minimize file sizes, the provided simulation data only represent a small part of the entire GaMD production sampling performed 
+# (i.e., first part of replicon 1 from the simulation set starting with an alpha-helical conformation) and 
+# are given to show how to process the "raw" Amber GaMD output in order to generate input files for reweight_residue_secstruct.py.
+
+# The output of this scirpt is written to the directory input_reweight_residue_secstruct.
+
+# Author: Manuel Glaser, manuel.glaser@h-its.org
+
+# Setup Amber18 (please adapt this part accordingly to make sure your Amber installation is properly setup!)
+source /hits/fast/mcm/app/amber/amber18/amber.sh # PLEASE ADAPT THIS!
+
+if test -d input_reweight_residue_secstruct
+then
+    echo "Please backup, move, or remove the directory input_reweight_residue_secstruct first, before running this script."     
+    exit 1
+fi
+
+if ! test -f tS100A1ct_peptide.prmtop || ! test -f gaMD_params_stripped.nc || ! test -f gaMD_prod_1_stripped_cut.nc || \
+   ! test -f gamd.log || ! test -f gaMD_prod_1_cut.log
+then
+    echo "Please make sure all \"raw\" input files processed by this script are present in the working directory, i.e.:"
+    echo "tS100A1ct_peptide.prmtop, gaMD_params_stripped.nc, gaMD_prod_1_stripped_cut.nc, gamd.log, and gaMD_prod_1_cut.log"
+    exit 1
+fi
+
+mkdir -p input_reweight_residue_secstruct
+
+cd input_reweight_residue_secstruct
+
+####################################################################################################
+# Preparation of the "dssp.out" file containing the secondary structure information for each frame #
+####################################################################################################
+# Computed via the "secstruct"-command of cpptraj.
+
+# Setup of cpptraj input file
+cpptraj() {
+cat > cpptraj.in << END
+parm ../tS100A1ct_peptide.prmtop [top1]
+trajin ../gaMD_params_stripped.nc 4001 6000 1 parm [top1]
+trajin ../gaMD_prod_1_stripped_cut.nc 1 10000 1 parm [top1]
+secstruct :1-26 out dssp.out sumout dssp.sum.out assignout dssp.assign.out totalout dssp.total.out
+run
+quit
+END
+}
+
+# Create cpptraj input file
+cpptraj
+# Run cpptraj
+$AMBERHOME/bin/cpptraj -i cpptraj.in 2>&1 |tee cpptraj.log
+#-------------------------------------
+# List of cpptraj output files written
+#-------------------------------------
+# Secondary structure type assignment for each peptide residue position in each GaMD frame: dssp.out (needed as input for reweight_residue_secstruct.py)
+# (Secondary structure type propensities per GaMD frame: dssp.total.out)
+# (Secondary structure type propensities per peptide residue position based on all GaMD frames: dssp.sum.out)
+# (Overall secondary structure type assignment for each peptide residue position based on all GaMD frames: dssp.assign.out)
+
+#########################################
+# Preparation of the "weights.dat" file #
+#########################################
+# Associated GaMD boost potentials are parsed from files containing Amber GaMD output (from Amber18), 
+# which is formatted in "weights.dat" according to input specifications for the corresponding standard GaMD analysis scripts "PyReweighting-*D.py".
+
+# Info: number of data points are specified as line number counts in the GaMD-returned log files (counting from the end of the file)
+gamd=2000 # number of data points used for reweighting from gamd.log
+gaMD_prod_1_cut=10000 # number of data points used for reweighting from gaMD_prod_1_cut.log
+
+touch weights.dat # needed as input for reweight_residue_secstruct.py
+# weights.dat: white-space separated csv file containing: the boost potential in units kbT, the frame count, and the boost potential in units kcal/mol
+# Note: the frame count present in weights.dat is based on the internal Amber frame counter and thus the number differs from the overall count for the selected frames and corresponding GaMD log file data points, respectively, used for the reweighting procedure.
+
+for i in gamd gaMD_prod_1_cut
+do
+    nl="$(eval "echo \$$i")"
+    # a dual boost potential was here (adapt the parsing accordingly for your specific case)
+    tail -n $nl ../$i.log | awk 'NR%1==0' | awk '{print ($8+$7)/(0.001987*300)"                " $2  "             " ($8+$7)}' >> weights.dat
+done
+
+cd ~-

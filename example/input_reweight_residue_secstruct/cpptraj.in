@@ -1,0 +1,6 @@
+parm ../tS100A1ct_peptide.prmtop [top1]
+trajin ../gaMD_params_stripped.nc 4001 6000 1 parm [top1]
+trajin ../gaMD_prod_1_stripped_cut.nc 1 10000 1 parm [top1]
+secstruct :1-26 out dssp.out sumout dssp.sum.out assignout dssp.assign.out totalout dssp.total.out
+run
+quit

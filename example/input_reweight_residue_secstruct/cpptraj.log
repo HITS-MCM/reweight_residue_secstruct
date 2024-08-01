@@ -1,0 +1,133 @@
+
+CPPTRAJ: Trajectory Analysis. V4.14.0 (AmberTools V19.12)
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 08/01/24 10:09:49
+| Available memory: 59.753 GB
+
+INPUT: Reading input from 'cpptraj.in'
+  [parm ../tS100A1ct_peptide.prmtop [top1]]
+	Reading '../tS100A1ct_peptide.prmtop' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin ../gaMD_params_stripped.nc 4001 6000 1 parm [top1]]
+	Reading '../gaMD_params_stripped.nc' as Amber NetCDF
+  [trajin ../gaMD_prod_1_stripped_cut.nc 1 10000 1 parm [top1]]
+	Reading '../gaMD_prod_1_stripped_cut.nc' as Amber NetCDF
+  [secstruct :1-26 out dssp.out sumout dssp.sum.out assignout dssp.assign.out totalout dssp.total.out]
+    SECSTRUCT: Calculating secondary structure using mask [:1-26]
+	Dumping results to dssp.out
+	Sum results to dssp.sum.out
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Overall assigned SS will be written to dssp.assign.out
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: [top1] tS100A1ct_peptide.prmtop, 399 atoms, 26 res, box: Trunc. Oct., 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'gaMD_params_stripped.nc' is a NetCDF AMBER trajectory with coordinates, time, box, Parm tS100A1ct_peptide.prmtop (Trunc. Oct. box) (reading 2000 of 6000)
+ 1: 'gaMD_prod_1_stripped_cut.nc' is a NetCDF AMBER trajectory with coordinates, time, box, Parm tS100A1ct_peptide.prmtop (Trunc. Oct. box) (reading 10000 of 10000)
+  Coordinate processing will occur on 12000 frames.
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'tS100A1ct_peptide.prmtop' (1 actions):
+  0: [secstruct :1-26 out dssp.out sumout dssp.sum.out assignout dssp.assign.out totalout dssp.total.out]
+Warning: Not all BB atoms found for 3 residues: ASP:1 PRO:5 PRO:6
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [:1-26] corresponds to 26 residues.
+----- gaMD_params_stripped.nc (4001-6000, 1) -----
+ 0% 10% 
+----- gaMD_prod_1_stripped_cut.nc (1-10000, 1) -----
+20% 30% 40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 12000 frames and processed 12000 frames.
+TIME: Avg. throughput= 62919.1332 frames / second.
+
+ACTION OUTPUT:
+TIME: Analyses took 0.0000 seconds.
+
+DATASETS (41 total):
+	DSSP_00001[None] "DSSP_00001[None]" (float), size is 12000 (48.000 kB)
+	DSSP_00001[Para] "DSSP_00001[Para]" (float), size is 12000 (48.000 kB)
+	DSSP_00001[Anti] "DSSP_00001[Anti]" (float), size is 12000 (48.000 kB)
+	DSSP_00001[3-10] "DSSP_00001[3-10]" (float), size is 12000 (48.000 kB)
+	DSSP_00001[Alpha] "DSSP_00001[Alpha]" (float), size is 12000 (48.000 kB)
+	DSSP_00001[Pi] "DSSP_00001[Pi]" (float), size is 12000 (48.000 kB)
+	DSSP_00001[Turn] "DSSP_00001[Turn]" (float), size is 12000 (48.000 kB)
+	DSSP_00001[Bend] "DSSP_00001[Bend]" (float), size is 12000 (48.000 kB)
+	DSSP_00001[res]:1 "ASP:1" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:2 "LYS:2" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:3 "ASP:3" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:4 "ASP:4" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:5 "PRO:5" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:6 "PRO:6" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:7 "TYR:7" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:8 "VAL:8" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:9 "VAL:9" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:10 "LEU:10" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:11 "VAL:11" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:12 "ALA:12" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:13 "ALA:13" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:14 "LEU:14" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:15 "THR:15" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:16 "VAL:16" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:17 "ALA:17" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:18 "CYS:18" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:19 "ASN:19" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:20 "ASN:20" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:21 "PHE:21" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:22 "PHE:22" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:23 "TRP:23" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:24 "GLU:24" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:25 "ASN:25" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[res]:26 "SER:26" (integer), size is 12000 (48.000 kB)
+	DSSP_00001[avgss]:1 "Para" (double), size is 26 (0.208 kB)
+	DSSP_00001[avgss]:2 "Anti" (double), size is 26 (0.208 kB)
+	DSSP_00001[avgss]:3 "3-10" (double), size is 26 (0.208 kB)
+	DSSP_00001[avgss]:4 "Alpha" (double), size is 26 (0.208 kB)
+	DSSP_00001[avgss]:5 "Pi" (double), size is 26 (0.208 kB)
+	DSSP_00001[avgss]:6 "Turn" (double), size is 26 (0.208 kB)
+	DSSP_00001[avgss]:7 "Bend" (double), size is 26 (0.208 kB)
+    Total data set memory usage is at least 1.633 MB
+
+DATAFILES (4 total):
+  dssp.out (Standard Data File):  ASP:1 LYS:2 ASP:3 ASP:4 ... TRP:23 GLU:24 ASN:25 SER:26
+  dssp.sum.out (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+  dssp.total.out (Standard Data File):  DSSP_00001[Para] DSSP_00001[Anti] DSSP_00001[3-10] DSSP_00001[Alpha] DSSP_00001[Pi] DSSP_00001[Turn] DSSP_00001[Bend]
+  dssp.assign.out (SS assignment)
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.01%)
+TIME:		Trajectory Process : 0.1907 s ( 79.40%)
+TIME:		Action Post        : 0.0000 s (  0.01%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.0494 s ( 20.57%)
+TIME:		Other              : 0.0000 s (  0.00%)
+TIME:	Run Total 0.2402 s
+---------- RUN END ---------------------------------------------------
+  [quit]
+TIME: Total execution time: 0.2554 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
