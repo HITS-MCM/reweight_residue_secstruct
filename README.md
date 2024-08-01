@@ -5,7 +5,7 @@ Please see the following publication for more information on the applied **discr
 
 > "Simulation of the Positive Inotropic Peptide S100A1ct in Aqueous Environment by Gaussian Accelerated Molecular Dynamics"; M. Glaser, N. J. Bruce, S. B. Han, R. C. Wade, J Phys Chem B. 2021 May 13;125(18):4654-4666 (https://pubs.acs.org/doi/10.1021/acs.jpcb.1c00902)
 
-The reweighting procedure is implemented in the Python module **`src/reweight_residue_secstruct/reweight_residue_secstruct.py`** (please also check the introductory comment in `reweight_residue_secstruct.py` for more information).
+The reweighting procedure is implemented in the Python module **`src/reweight_residue_secstruct/reweight_residue_secstruct.py`** (please also check the introductory comment in `reweight_residue_secstruct.py` and its options for more information).
 
 ### Python libraries needed for `reweight_residue_secstruct.py`
 
@@ -61,7 +61,7 @@ In case of the first trajectory file (i.e., `gaMD_params_stripped.nc`), only the
 
 > [!IMPORTANT]
 > * If your trajectory is split over more than two trajectory files, you have to extend the script accordingly, **in any case, make sure that the order of your GaMD frames and their respective GaMD log file information are in sync.**
-> * A dual boost potential was applied during GaMD simulations (relevant for parsing).
+> * A dual boost potential was applied during GaMD simulations (relevant for parsing of GaMD boost potential information to generate the file `weights.dat`).
 
 > [!TIP]
 > By making the corresponding adaptions to `prepare_input_reweight_residue_secstruct.bsh`, in principle, one can also aggregate information from different GaMD replica for reweighting.
