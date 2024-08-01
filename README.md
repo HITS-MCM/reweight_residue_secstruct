@@ -77,4 +77,4 @@ It will collect all the output from `reweight_residue_secstruct.py` in the direc
 
 > [!TIP]
 > The script `reweight_residue_secstruct.py` can be run with automatic parallelization (`@njit`) by using its `-m parallel` option.
-> Depending on the resources, as many residue secondary structure reweightings as possible are then performed simultaneously.
+> With this option, depending on the resources, as many residue secondary structure reweightings as possible are then performed simultaneously.
