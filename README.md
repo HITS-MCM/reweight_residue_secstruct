@@ -22,7 +22,7 @@ $ conda create -n reweight_residue_secstruct python=3.6
 $ conda activate reweight_residue_secstruct
 $ conda install -c conda-forge pandas
 $ conda install -c conda-forge matplotlib
-$ conda install -c numba numba<br/>
+$ conda install -c numba numba
 ```
 * or by use of any other means to setup Python and the corresponding libraries.
 
