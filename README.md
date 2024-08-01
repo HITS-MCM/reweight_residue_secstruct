@@ -60,7 +60,7 @@ In the example case, the script `prepare_input_reweight_residue_secstruct.bsh` a
 In case of the first trajectory file (i.e., `gaMD_params_stripped.nc`), only the last third of frames is taken (as the remaining part corresponds to preparatory steps).
 
 > [!IMPORTANT]
-> * If your trajectory is split over more than two trajectory files, you have to extend the script accordingly, **in any case, make sure that the order of your GaMD frames and their respective GaMD log file information are in sync.**
+> * If your trajectory is split over more than two trajectory files, you have to extend the script accordingly, in any case, **make sure that the order of your GaMD frames and their respective GaMD log file information are in sync.**
 > * A dual boost potential was applied during GaMD simulations (relevant for parsing of GaMD boost potential information to generate the file `weights.dat`).
 
 > [!TIP]
