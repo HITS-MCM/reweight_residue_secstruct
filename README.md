@@ -73,7 +73,7 @@ It will collect all the output from `reweight_residue_secstruct.py` in the direc
 
 > [!NOTE]
 > * Please check comments in `run_reweight_residue_secstruct.bsh` for information on the `reweight_residue_secstruct.py` output files.
-> * The script `reweight_residue_secstruct.bsh` checks for standard Amber amino acid three-letter codes. 
+> * The script `reweight_residue_secstruct.py` checks for standard Amber amino acid three-letter codes. 
 
 > [!TIP]
 > The script `reweight_residue_secstruct.py` can be run with automatic parallelization (`@njit`) by using its `-m parallel` option.
