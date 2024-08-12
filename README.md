@@ -25,7 +25,7 @@ An example case on how to **(i)** create the input files for `reweight_residue_s
 * two bash scripts: `prepare_input_reweight_residue_secstruct.bsh` and `run_reweight_residue_secstruct.bsh`.
 
 > [!CAUTION]
-> The examplary files were generated with **Amber18**. 
+> The examplary Amber GaMD output files were generated with **Amber18**. 
 > Please note that the example bash scripts as well as `reweight_residue_secstruct.py` were **only used in combination with GaMD output from Amber18**.
 
 > [!IMPORTANT]
