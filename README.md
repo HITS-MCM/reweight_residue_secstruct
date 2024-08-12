@@ -34,9 +34,11 @@ An example case on how to **(i)** create the input files for `reweight_residue_s
 
 **To run the example, do the following:**
 
-Setup your Amber installation, if not already done:
+**1) Setup your Amber installation, if not already done:**
 
-**1) `$ source /your-path/amber18/amber.sh`** 
+```
+`$ source /your-path/amber18/amber.sh` 
+```
 
 Activate the Conda environment `reweight_residue_secstruct`: 
 
