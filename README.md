@@ -50,6 +50,7 @@ $ conda activate reweight_residue_secstruct
 
 ```
 $ ./prepare_input_reweight_residue_secstruct.bsh
+$ ./run_reweight_residue_secstruct.bsh
 ```
 
 This bash script will generate the necessary input files for `reweight_residue_secstruct.py`, `dssp.out` and `weights.dat`, from the GaMD trajectory and GaMD log files, respectively.
@@ -70,11 +71,7 @@ In case of the first trajectory file (i.e., `gaMD_params_stripped.nc`), only the
 > [!TIP]
 > By making the corresponding adaptions to `prepare_input_reweight_residue_secstruct.bsh`, in principle, one can also aggregate information from different GaMD replica for reweighting.
 
-```
-$ ./run_reweight_residue_secstruct.bsh
-```
-
-This is a wrapper-script to run `reweight_residue_secstruct.py`.
+The script `run_reweight_residue_secstruct.bsh` is a wrapper-script to run `reweight_residue_secstruct.py`.
 It will collect all the output from `reweight_residue_secstruct.py` in the directory `output_reweight_residue_secstruct`.
 
 > [!NOTE]
