@@ -49,4 +49,3 @@ dependencies:
   - tornado=6.1=py36h8f6f2f9_1
   - wheel=0.34.2=py36_0
   - xz=5.2.6=h166bdaf_0
-prefix: /exports/scratch/glaserml/Applications/anaconda3/envs/reweight_residue_secstruct

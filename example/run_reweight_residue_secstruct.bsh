@@ -5,11 +5,14 @@
 
 # Author: Manuel Glaser, manuel.glaser@h-its.org
 
-# Setup your conda installation!
-. /exports/scratch/glaserml/Applications/anaconda3/etc/profile.d/conda.sh # PLEASE ADAPT THIS!
+python=$(which python3.6 2> /dev/null)
 
-# Activate the 'reweight_residue_secstruct' environment
-conda activate reweight_residue_secstruct
+if test -z "$python"
+then
+    echo "Please make python3.6 avaiable."
+    echo "The best way to run this script is within the supplied Conda environment 'reweight_residue_secstruct'."
+    exit 1
+fi
 
 input='../input_reweight_residue_secstruct'
 output='output_reweight_residue_secstruct'

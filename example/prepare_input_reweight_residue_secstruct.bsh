@@ -22,8 +22,15 @@
 
 # Author: Manuel Glaser, manuel.glaser@h-its.org
 
-# Setup Amber18 (please adapt this part accordingly to make sure your Amber installation is properly setup!)
-source /hits/fast/mcm/app/amber/amber18/amber.sh # PLEASE ADAPT THIS!
+if test -z "$AMBERHOME"
+then
+    echo 'The $AMBERHOME variable is empty, please properly setup Amber before running the script.'
+    exit 1
+elif ! test -d "$AMBERHOME"
+then
+    echo "The \$AMBERHOME variable is set to '$AMBERHOME' which seems not be a directory... check if Amber is properly setup."
+    exit 1
+fi
 
 if test -d input_reweight_residue_secstruct
 then
