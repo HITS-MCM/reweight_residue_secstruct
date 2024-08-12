@@ -34,19 +34,23 @@ An example case on how to **(i)** create the input files for `reweight_residue_s
 
 **To run the example, do the following:**
 
-**1) Setup your Amber installation, if not already done:**
+*1) Setup your Amber installation, if not already done:*
 
 ```
-`$ source /your-path/amber18/amber.sh` 
+$ source /your-path/amber18/amber.sh 
 ```
 
-Activate the Conda environment `reweight_residue_secstruct`: 
+*2) Activate the Conda environment `reweight_residue_secstruct`:* 
 
-**2) `$ conda activate reweight_residue_secstruct`**
+```
+$ conda activate reweight_residue_secstruct
+```
 
-Next, execute the following two bash scripts within the `example` directory:**
+*3) Next, execute the following two bash scripts within the `example` directory:*
 
-**3) `$ ./prepare_input_reweight_residue_secstruct.bsh`**
+```
+$ ./prepare_input_reweight_residue_secstruct.bsh
+```
 
 This bash script will generate the necessary input files for `reweight_residue_secstruct.py`, `dssp.out` and `weights.dat`, from the GaMD trajectory and GaMD log files, respectively.
 The bash script will write its output to the directory `input_reweight_residue_secstruct`.
@@ -66,7 +70,9 @@ In case of the first trajectory file (i.e., `gaMD_params_stripped.nc`), only the
 > [!TIP]
 > By making the corresponding adaptions to `prepare_input_reweight_residue_secstruct.bsh`, in principle, one can also aggregate information from different GaMD replica for reweighting.
 
-**4) `$ ./run_reweight_residue_secstruct.bsh`**
+```
+$ ./run_reweight_residue_secstruct.bsh
+```
 
 This is a wrapper-script to run `reweight_residue_secstruct.py`.
 It will collect all the output from `reweight_residue_secstruct.py` in the directory `output_reweight_residue_secstruct`.
