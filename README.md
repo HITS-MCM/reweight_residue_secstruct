@@ -78,6 +78,8 @@ In case of the first trajectory file (i.e., `gaMD_params_stripped.nc`), only the
 The bash script is a wrapper-script to run `reweight_residue_secstruct.py`.
 It will collect all the output from `reweight_residue_secstruct.py` in the directory `output_reweight_residue_secstruct`.
 
+*About `reweight_residue_secstruct.py`:*
+
 > [!NOTE]
 > * Please check comments in `run_reweight_residue_secstruct.bsh` for information on the `reweight_residue_secstruct.py` output files.
 > * The script `reweight_residue_secstruct.py` checks for standard Amber amino acid three-letter codes. 
