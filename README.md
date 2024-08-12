@@ -9,7 +9,7 @@ The reweighting procedure is implemented in the Python module **`src/reweight_re
 
 ### Python libraries needed for `reweight_residue_secstruct.py`
 
-To run `reweight_residue_secstruct.py`, please first create the necessary "environment" by creating the Conda environment `reweight_residue_secstruct` via the supplied YAML file (`environment_reweight_residue_secstruct.yml`)
+To run `reweight_residue_secstruct.py`, please first create the necessary Conda environment `reweight_residue_secstruct` via the supplied YAML file (`environment_reweight_residue_secstruct.yml`)
 ```
 $ conda env create -f environment_reweight_residue_secstruct.yml
 $ conda activate reweight_residue_secstruct
