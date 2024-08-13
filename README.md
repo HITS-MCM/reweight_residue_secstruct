@@ -2,9 +2,7 @@
 ## Reweighting of GaMD (Amber)-sampled residue secondary structure propensities of peptides
 
 >[!CAUTION]
->####################################
->#**Beta version/release candidate!**#
->####################################
+>**Beta version/release candidate!**
 
 Please see the following publication for more information on the applied **discrete residue-based secondary structure propensity reweighting** approach: 
 
