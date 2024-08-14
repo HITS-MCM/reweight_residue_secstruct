@@ -19,15 +19,15 @@ $ conda env create -f environment_reweight_residue_secstruct.yml
 
 ### Example case on how to use `reweight_residue_secstruct.py`
 
-An example case on how to **(i)** create the input files for `reweight_residue_secstruct.py` from examplary Amber GaMD output files and to **(ii)** run `reweight_residue_secstruct.py` is provided in the directory `example`.
+An example case on how to **(i)** create the input files for `reweight_residue_secstruct.py` from Amber GaMD output files and to **(ii)** run `reweight_residue_secstruct.py` is provided in the directory `example`.
 
 **The `example` directory contains:** 
-* examplary Amber GaMD production run trajectory files (`gaMD_params_stripped.nc`, `gaMD_prod_1_stripped_cut.nc`) as well as
+* Amber GaMD production run trajectory files (`gaMD_params_stripped.nc`, `gaMD_prod_1_stripped_cut.nc`) as well as
 * the corresponding Amber GaMD log files (`gamd.log`, `gaMD_prod_1_cut.log`), containing the GaMD boost potential information for the respective MD steps the frames were outputted at and
 * two bash scripts: `prepare_input_reweight_residue_secstruct.bsh` and `run_reweight_residue_secstruct.bsh`.
 
 > [!CAUTION]
-> The examplary Amber GaMD output files were generated with **Amber18**. 
+> The example Amber GaMD output files were generated with **Amber18**. 
 > Please note that the example bash scripts as well as `reweight_residue_secstruct.py` were **only used in combination with GaMD output from Amber18**.
 
 > [!IMPORTANT]
