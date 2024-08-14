@@ -7,6 +7,9 @@
 #  Amber topolgy file: tS100A1ct_peptide.prmtop
 #  Amber NetCDF trajectoy files (not autoimaged): gaMD_params_stripped.nc and gaMD_prod_1_stripped_cut.nc
 #  Respective Amber GaMD log files: gamd.log and gaMD_prod_1_cut.log
+#   Info: gamd.log only contains 4000 data points vs 6000 frames in gaMD_params_stripped.nc as the first third of the frames from gaMD_params_stripped.nc 
+#   correspond to cMD preparatory steps, only the last 2000 data points/frames from gamd.log and gaMD_params_stripped.nc, respectively, 
+#   correspond to the GaMD production stage.
 # However, one can also adapt the script to aggregate respective information from multiple independent GaMD simulation runs of the same system.
 # Simulations were performed in explicit solvent, but water molecules/ions were removed for this example to reduce file size.
 # Dual boost GaMD was applied (i.e., total potential plus dihedral potential boost).
