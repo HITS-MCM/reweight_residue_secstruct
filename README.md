@@ -90,5 +90,5 @@ It will collect all the output from `reweight_residue_secstruct.py` in the direc
 > * The script `reweight_residue_secstruct.py` checks for common standard Amber force fields amino acid three-letter codes, if your residue name is not listed there, the `allowed_residues`-list needs to be extended accordingly. 
 
 > [!TIP]
-> The script `reweight_residue_secstruct.py` can be run with automatic parallelization (`@njit`) by using its `-m parallel` option.
-> With this option, depending on the resources, as many residue secondary structure reweightings as possible are then performed simultaneously.
+> The script `reweight_residue_secstruct.py` can be run in parallel by using its `-m parallel` option.
+> With this option, depending on the available cores, as many residue secondary structure reweightings as possible are then performed simultaneously.
