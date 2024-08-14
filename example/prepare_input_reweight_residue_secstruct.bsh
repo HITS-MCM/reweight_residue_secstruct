@@ -18,7 +18,7 @@
 # (i.e., first part of replicon 1 from the simulation set starting with an alpha-helical conformation) and 
 # are given to show how to process the "raw" Amber GaMD output in order to generate input files for reweight_residue_secstruct.py.
 
-# The output of this scirpt is written to the directory input_reweight_residue_secstruct.
+# The output of this script is written to the directory input_reweight_residue_secstruct.
 
 # Author: Manuel Glaser, manuel.glaser@h-its.org
 
@@ -75,9 +75,9 @@ $AMBERHOME/bin/cpptraj -i cpptraj.in 2>&1 |tee cpptraj.log
 # List of cpptraj output files written
 #-------------------------------------
 # Secondary structure type assignment for each peptide residue position in each GaMD frame: dssp.out (needed as input for reweight_residue_secstruct.py)
-# (Secondary structure type propensities per GaMD frame: dssp.total.out)
-# (Secondary structure type propensities per peptide residue position based on all GaMD frames: dssp.sum.out)
-# (Overall secondary structure type assignment for each peptide residue position based on all GaMD frames: dssp.assign.out)
+# Secondary structure type propensities per GaMD frame: dssp.total.out
+# Secondary structure type propensities per peptide residue position based on all GaMD frames: dssp.sum.out
+# Overall secondary structure type assignment for each peptide residue position based on all GaMD frames: dssp.assign.out
 
 #########################################
 # Preparation of the "weights.dat" file #
