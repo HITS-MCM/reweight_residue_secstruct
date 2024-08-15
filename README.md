@@ -1,6 +1,9 @@
 # reweight_residue_secstruct
 ## Reweighting of GaMD (Amber)-sampled residue secondary structure propensities of peptides
 
+>[!CAUTION]
+>**Beta version/release candidate!**
+
 Please see the following publication for more information on the applied **discrete residue-based secondary structure propensity reweighting** approach: 
 
 > "Simulation of the Positive Inotropic Peptide S100A1ct in Aqueous Environment by Gaussian Accelerated Molecular Dynamics"; M. Glaser, N. J. Bruce, S. B. Han, R. C. Wade, J Phys Chem B. 2021 May 13;125(18):4654-4666 (https://pubs.acs.org/doi/10.1021/acs.jpcb.1c00902)
@@ -16,15 +19,17 @@ $ conda env create -f environment_reweight_residue_secstruct.yml
 
 ### Example case on how to use `reweight_residue_secstruct.py`
 
-An example case on how to **(i)** create the input files for `reweight_residue_secstruct.py` from examplary Amber GaMD output files and to **(ii)** run `reweight_residue_secstruct.py` is provided in the directory `example`.
+The example case provided in the directory `example` allows: 
+1. to create the input files for `reweight_residue_secstruct.py` from Amber GaMD output files
+2. to run `reweight_residue_secstruct.py` with the generated input files
 
 **The `example` directory contains:** 
-* examplary Amber GaMD production run trajectory files (`gaMD_params_stripped.nc`, `gaMD_prod_1_stripped_cut.nc`) as well as
-* the corresponding Amber GaMD log files (`gamd.log`, `gaMD_prod_1_cut.log`), containing the GaMD boost potential information for the respective MD steps the frames were outputted at and
-* two bash scripts: `prepare_input_reweight_residue_secstruct.bsh` and `run_reweight_residue_secstruct.bsh`.
+* Amber GaMD production run trajectory files (`gaMD_params_stripped.nc`, `gaMD_prod_1_stripped_cut.nc`)
+* the corresponding Amber GaMD log files (`gamd.log`, `gaMD_prod_1_cut.log`), containing the GaMD boost potential information for the respective MD steps the frames were outputted at
+* two bash scripts: `prepare_input_reweight_residue_secstruct.bsh` and `run_reweight_residue_secstruct.bsh`
 
 > [!CAUTION]
-> The examplary Amber GaMD output files were generated with **Amber18**. 
+> The example Amber GaMD output files were generated with **Amber18**. 
 > Please note that the example bash scripts as well as `reweight_residue_secstruct.py` were **only used in combination with GaMD output from Amber18**.
 
 > [!IMPORTANT]
@@ -53,11 +58,11 @@ $ ./prepare_input_reweight_residue_secstruct.bsh
 $ ./run_reweight_residue_secstruct.bsh
 ```
 
-*About `prepare_input_reweight_residue_secstruct.bsh`:*
+**About `prepare_input_reweight_residue_secstruct.bsh`:**
 
 This bash script will generate the necessary input files for `reweight_residue_secstruct.py`, `dssp.out` and `weights.dat`, from the GaMD trajectory and GaMD log files, respectively.
 The bash script will write its output to the directory `input_reweight_residue_secstruct`.
-The file `dssp.out` contains the secondary structure information for each peptide residue of the all the GaMD frames, obtained via **`cpptraj`**.
+The file `dssp.out` contains the secondary structure information for each peptide residue of all the GaMD frames, obtained via **`cpptraj`**.
 The file `weights.dat` contains the corresponding boost potential information parsed from the GaMD log files **in the format that is also used by the standard GaMD reweighting scripts `PyReweighting-*D.py`**, which are used for reweighting of continuous order parameters.
 
 > [!NOTE]
@@ -73,17 +78,17 @@ In case of the first trajectory file (i.e., `gaMD_params_stripped.nc`), only the
 > [!TIP]
 > By making the corresponding adaptions to `prepare_input_reweight_residue_secstruct.bsh`, in principle, one can also aggregate information from different GaMD replica for reweighting.
 
-*About `run_reweight_residue_secstruct.bsh`:*
+**About `run_reweight_residue_secstruct.bsh`:**
 
 The bash script is a wrapper-script to run `reweight_residue_secstruct.py`.
 It will collect all the output from `reweight_residue_secstruct.py` in the directory `output_reweight_residue_secstruct`.
 
-*About `reweight_residue_secstruct.py`:*
+**About `reweight_residue_secstruct.py`:**
 
 > [!NOTE]
 > * Please check comments in `run_reweight_residue_secstruct.bsh` for information on the `reweight_residue_secstruct.py` output files.
-> * The script `reweight_residue_secstruct.py` checks for standard Amber amino acid three-letter codes. 
+> * The script `reweight_residue_secstruct.py` checks for common standard Amber force fields amino acid three-letter codes, if your residue name is not listed there, the `allowed_residues`-list needs to be extended accordingly. 
 
 > [!TIP]
-> The script `reweight_residue_secstruct.py` can be run with automatic parallelization (`@njit`) by using its `-m parallel` option.
-> With this option, depending on the resources, as many residue secondary structure reweightings as possible are then performed simultaneously.
+> The script `reweight_residue_secstruct.py` can be run in parallel by using its `-m parallel` option.
+> With this option, depending on the available cores, as many residue secondary structure reweightings as possible are then performed simultaneously.
