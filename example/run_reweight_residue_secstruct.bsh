@@ -1,9 +1,19 @@
 #!/bin/bash
-
+#  program run_reweight_residue_secstruct.bsh 
+#  version 1.00 (2024)
+#
+#  Copyright (c) 2024
+#  Heidelberg Institute of Theoretical Studies (HITS, www.h-its.org)
+#  Schloss-Wolfsbrunnenweg 35, 69118 Heidelberg Germany
+#
+#  Please send your contact address to get information on updates and
+#  new features to "mcmsoft@h-its.org". Questions will be
+#  answered as soon as possible.
+#
+#  Author(s): Manuel Glaser (manuel.glaser@h-its.org)
+#
 # Example script to run reweight_residue_secstruct.py.
 # The output of this script is written to the directory output_reweight_residue_secstruct.
-
-# Author: Manuel Glaser, manuel.glaser@h-its.org
 
 python=$(which python3.6 2> /dev/null)
 

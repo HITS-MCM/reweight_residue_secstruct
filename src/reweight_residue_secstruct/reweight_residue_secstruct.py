@@ -1,3 +1,22 @@
+#  program reweight_residue_secstruct.py
+#  version 1.00 (2021)
+#
+#  Copyright (c) 2021, 2024
+#  Heidelberg Institute of Theoretical Studies (HITS, www.h-its.org)
+#  Schloss-Wolfsbrunnenweg 35, 69118 Heidelberg Germany
+#
+#  Please send your contact address to get information on updates and
+#  new features to "mcmsoft@h-its.org". Questions will be
+#  answered as soon as possible.
+#
+#  References:
+#  "Simulation of the Positive Inotropic Peptide S100A1ct in Aqueous Environment by Gaussian Accelerated Molecular Dynamics" 
+#  M. Glaser, N. J. Bruce, S. B. Han, R. C. Wade 
+#  J Phys Chem B. 2021 May 13;125(18):4654-4666 
+#  https://pubs.acs.org/doi/10.1021/acs.jpcb.1c00902  
+#
+#  Author(s): Manuel Glaser (manuel.glaser@h-its.org)
+
 import argparse
 import os.path
 import sys

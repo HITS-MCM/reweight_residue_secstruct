@@ -1,5 +1,17 @@
 #!/bin/bash
-
+#  program prepare_input_reweight_residue_secstruct.bsh
+#  version 1.00 (2024)
+#
+#  Copyright (c) 2024
+#  Heidelberg Institute of Theoretical Studies (HITS, www.h-its.org)
+#  Schloss-Wolfsbrunnenweg 35, 69118 Heidelberg Germany
+#
+#  Please send your contact address to get information on updates and
+#  new features to "mcmsoft@h-its.org". Questions will be
+#  answered as soon as possible.
+#
+#  Author(s): Manuel Glaser (manuel.glaser@h-its.org)
+#
 # This script provides an example on how to obtain the "dssp.out" and "weights.dat" input files 
 # for the script reweight_residue_secstruct.py from the Amber GaMD trajectory and boost potential output (from Amber18). 
 
@@ -22,8 +34,6 @@
 # are given to show how to process the "raw" Amber GaMD output in order to generate input files for reweight_residue_secstruct.py.
 
 # The output of this script is written to the directory input_reweight_residue_secstruct.
-
-# Author: Manuel Glaser, manuel.glaser@h-its.org
 
 if test -z "$AMBERHOME"
 then
