@@ -1,9 +1,6 @@
 # reweight_residue_secstruct
 ## Reweighting of GaMD (Amber)-sampled residue secondary structure propensities of peptides
 
->[!CAUTION]
->**Beta version/release candidate!**
-
 Please see the following publication for more information on the applied **discrete residue-based secondary structure propensity reweighting** approach: 
 
 > "Simulation of the Positive Inotropic Peptide S100A1ct in Aqueous Environment by Gaussian Accelerated Molecular Dynamics"; M. Glaser, N. J. Bruce, S. B. Han, R. C. Wade, J Phys Chem B. 2021 May 13;125(18):4654-4666 (https://pubs.acs.org/doi/10.1021/acs.jpcb.1c00902)
